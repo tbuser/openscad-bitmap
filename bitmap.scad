@@ -11,13 +11,14 @@ module bitmap(bitmap, block_size, height, row_size) {
 	
 	function loc_x(loc) = floor(loc / row_size) * block_size;
 	function loc_y(loc) = loc % row_size * block_size;
+	function loc_z(loc) = (bitmap[loc]*height-height)/2;
 
 	translate(v = [-width/2+block_size/2,-width/2+block_size/2,height/2]) {
 		for (loc = [0:bitmap_size - 1]) {
-			if (bitmap[loc] == 1) {
+			if (bitmap[loc] != 0) {
 				union() {
-					translate(v = [loc_x(loc), loc_y(loc), 0]) {
-						cube(size = [block_size, block_size, height], center = true);
+					translate(v = [loc_x(loc), loc_y(loc), loc_z(loc)]) {
+						cube(size = [block_size, block_size, height * bitmap[loc]], center = true);
 					}
 				}
 			}
