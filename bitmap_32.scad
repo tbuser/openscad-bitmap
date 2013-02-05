@@ -14,11 +14,6 @@ http://blog.think3dprint3d.com/2013/02/bitmap32.html
 */
 
 font_column_bits=31;
-//font_row_bits=20; //varies
-
-/*
-
-*/
 
 module bitmap(bitmap, block_size, height, column_bits, row_bits) {
 	x_length = block_size * row_bits;
@@ -3340,8 +3335,8 @@ module 32bit_char(char, block_size, height) {
 }
 
 
-//the string processing dows not do vey good job of spacing the chanracters
-//in the string - everything is 32 bits wide right now
+//the string processing does not do vey good job of spacing the characters
+//in the string - everything is 32 bits wide right now because of "M" and "W"
 module 32bit_str(chars, char_count, block_size, height)
 {
 	echo(str("32bit_str: Total Width: ", block_size * 32 * char_count, "mm, Char count:",  char_count));
