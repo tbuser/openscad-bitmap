@@ -9,7 +9,7 @@ Can also dynamically run this by passing an array on the command line:
 /Applications/OpenSCAD.app/Contents/MacOS/OpenSCAD -m make -D bitmap=[2,2,2,0,1,3,2,2,2] -D row_size=3 -s height_map.stl height_map.scad
 */
 
-<bitmap.scad>
+include <bitmap.scad>
 
 block_size = 5;
 height = 5;

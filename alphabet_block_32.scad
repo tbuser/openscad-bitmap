@@ -3,9 +3,11 @@ Parametric Alphabet Block
 Tony Buser <tbuser@gmail.com>
 http://tonybuser.com
 http://creativecommons.org/licenses/by/3.0/
+
+Adapted to use the "32" bit bitmap scad script
 */
 
-include <bitmap.scad>
+use <bitmap_32.scad>
 
 // change to any letter
 letter = "A";
@@ -19,6 +21,6 @@ union() {
 	}
 
 	translate(v = [10, 10, 15]) {
-		8bit_char(letter, 2, 5);
+		32bit_char(letter, 0.5, 5);
 	}
 }

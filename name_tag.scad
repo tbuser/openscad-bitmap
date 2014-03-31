@@ -5,7 +5,7 @@ http://tonybuser.com
 http://creativecommons.org/licenses/by/3.0/
 */
 
-<bitmap.scad>
+include <bitmap.scad>
 
 // change chars array and char_count
 // OpenSCAD has no string or length methods :(
